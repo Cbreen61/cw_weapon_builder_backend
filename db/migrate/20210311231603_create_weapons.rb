@@ -13,6 +13,7 @@ class CreateWeapons < ActiveRecord::Migration[6.1]
       t.string :rear_grip
       t.string :perk
       t.string :image
+      t.integer :game_id
 
       t.timestamps
     end
