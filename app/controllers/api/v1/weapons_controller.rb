@@ -1,4 +1,4 @@
-class WeaponsController < ApplicationController
+class Api::V1::WeaponsController < ApplicationController
   before_action :set_weapon, only: [:show, :update, :destroy]
 
   # GET /weapons
@@ -18,7 +18,7 @@ class WeaponsController < ApplicationController
     @weapon = Weapon.new(weapon_params)
 
     if @weapon.save
-      render json: @weapon, status: :created, location: @weapon
+      render json: @weapon, status: :accepted
     else
       render json: @weapon.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class WeaponsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def weapon_params
-      params.require(:weapon).permit(:name, :weapon_type, :muzzle, :barrel, :laser, :optic, :stock, :underbarrel, :ammunition, :rear, :grip, :perk, :image)
+      params.require(:weapon).permit(:name, :weapon_type, :muzzle, :barrel, :laser, :optic, :stock, :underbarrel, :ammunition, :rear, :grip, :perk, :image, :game_id)
     end
 end
