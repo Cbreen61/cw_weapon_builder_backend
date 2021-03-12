@@ -3,9 +3,9 @@ class Api::V1::WeaponsController < ApplicationController
 
   # GET /weapons
   def index
-    @weapons = Weapon.all
+    weapons = Weapon.all
 
-    render json: @weapons
+    render json: Weapon.arr_to_json #WeaponSerializer.new(weapons)
   end
 
   # GET /weapons/1
