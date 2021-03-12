@@ -10,7 +10,7 @@ class Weapon < ApplicationRecord
     # instance method that handles one specific post
     def instance_to_json
        
-        { 
+        {   id:self.id,
             name: self.name,
             weapon_type: self.weapon_type,
             image: self.image,
