@@ -9,6 +9,7 @@ class Weapon < ApplicationRecord
 
     # instance method that handles one specific post
     def instance_to_json
+       
         { 
             name: self.name,
             weapon_type: self.weapon_type,
@@ -29,7 +30,7 @@ class Weapon < ApplicationRecord
                 id: self.game.id,
                 name: self.game.name,
                 publisher: self.game.publisher
-             }
-         }
+            }
+        }
     end 
 end
