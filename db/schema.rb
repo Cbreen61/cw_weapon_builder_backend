@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_03_11_231603) do
     t.string "ammunition"
     t.string "rear_grip"
     t.string "perk"
-    t.string "image"
+    t.string "image", default: "https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/warzone/strategy-guide/03c-weapons/03C-WEAPONS-005.jpg"
     t.integer "game_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

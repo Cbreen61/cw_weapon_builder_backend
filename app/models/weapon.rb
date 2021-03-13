@@ -1,5 +1,6 @@
 class Weapon < ApplicationRecord
     belongs_to :game
+    validates :name, presence: true
 
     def self.arr_to_json
         self.all.map do |p|

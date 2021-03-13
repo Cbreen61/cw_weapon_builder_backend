@@ -12,7 +12,7 @@ class CreateWeapons < ActiveRecord::Migration[6.1]
       t.string :ammunition
       t.string :rear_grip
       t.string :perk
-      t.string :image
+      t.string :image, default:"https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/warzone/strategy-guide/03c-weapons/03C-WEAPONS-005.jpg"
       t.integer :game_id
 
       t.timestamps
