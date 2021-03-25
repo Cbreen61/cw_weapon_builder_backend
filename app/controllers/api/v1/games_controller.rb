@@ -5,12 +5,12 @@ class Api::V1::GamesController < ApplicationController
   def index
     @games = Game.all
 
-    render json: @games
+    render json: @games.arr_to_json
   end
 
   # GET /games/1
   def show
-    render json: @game
+    render json: @game.instance_to_json
   end
 
   # POST /games
@@ -18,7 +18,7 @@ class Api::V1::GamesController < ApplicationController
     @game = Game.new(game_params)
 
     if @game.save
-      render json: @game, status: :accepted
+      render json: @game.instance_to_json, status: :accepted
     else
       render json: @game.errors, status: :unprocessable_entity
     end
